@@ -1,8 +1,98 @@
 @import "fonts.css";
 
+html{
+  overflow-y: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
 @mixin lexend{
   font-family: 'Lexend', sans-serif;
 }
 @mixin ibm-plex{
   font-family: 'IBM Plex Sans', sans-serif;
+}
+
+// bg-colors
+
+.bg-grey{
+  background: #F0F3F4;
+}
+
+.bg-blue{
+  background-color: #82D2EF;
+}
+
+.wrapper-nav{
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+}
+
+.mg-auto{
+  margin: 0 auto;
+}
+
+nav{
+  margin: 0 auto;
+  display: flex;
+  font-family: 'Lexend-Regular', sans-serif;
+  font-weight: 400;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 1120px;
+
+  & ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 35%;
+    & li a{
+      text-decoration: none;
+      color: #135E79;
+    }
+  }
+}
+
+.general{
+  height: 74vh;
+  width: 100%;
+  background: url("../images/general-bg.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+
+  &__content{
+    position: absolute;
+    //bottom: 40px;
+    //left: 400px;
+    left: 21vw;
+    bottom: 4vh;
+
+    width: 550px;
+    height: 390px;
+    padding: 20px 30px;
+    & h1{
+      font: 400 100px 'Lexend-Medium';
+      color: #1f1f1f;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+    & p{
+      font: 400 20px 'Lexend-Regular';
+      color: #135E79;
+      line-height: 1.8;
+    }
+  }
+}
+.media-logos{
+  margin: 0 auto;
+  width: 1120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

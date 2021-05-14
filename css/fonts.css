@@ -7,10 +7,17 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Lexend";
-  src: url("../fonts/Lexend-Bold.eot");
-  src: local("☺"), url("../fonts/Lexend-Bold.woff") format("woff"), url("../fonts/Lexend-Bold.ttf") format("truetype"), url("../fonts/Lexend-Bold.svg") format("svg");
-  font-weight: normal;
+  font-family: "Lexend-Regular";
+  src: url("../fonts/Lexend-Regular.eot");
+  src: local("☺"), url("../fonts/Lexend-Regular.woff") format("woff"), url("../fonts/Lexend-Regular.ttf") format("truetype"), url("../fonts/Lexend-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lexend-Medium";
+  src: url("../fonts/Lexend-Medium.eot");
+  src: local("☺"), url("../fonts/Lexend-Medium.woff") format("woff"), url("../fonts/Lexend-Medium.ttf") format("truetype"), url("../fonts/Lexend-Medium.svg") format("svg");
+  font-weight: 500;
   font-style: normal;
 }
 
