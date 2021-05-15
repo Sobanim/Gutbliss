@@ -126,6 +126,14 @@ nav ul li a {
   font: 400 18px "Lexend-Regular";
   padding: 13px 52px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.mission__content button:hover, .mission__content button:focus {
+  background: #E5A02F;
+  transition: 0.3s;
+}
+.mission__content button:active {
+  background: #D6962D;
 }
 .mission__image img {
   border-radius: 50%;
@@ -142,10 +150,14 @@ nav ul li a {
   z-index: -1;
 }
 
+.wrapper-health {
+  position: relative;
+  z-index: 0;
+}
+
 .health {
   margin: 0 auto;
   width: 1120px;
-  height: 1200px;
 }
 .health h2 {
   font: 400 32px "Lexend-Regular";
@@ -157,20 +169,41 @@ nav ul li a {
 }
 .health p {
   color: #1f1f1f;
-  margin: 0 20%;
   font: 400 18px "IBM Plex Sans";
   line-height: 32px;
-  margin-bottom: 50px;
+  margin: 0 20% 30px;
 }
 .health__grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0 -10px;
+  padding-bottom: 80px;
 }
 .health__cell {
-  width: 265px;
-  height: 265px;
-  background-size: contain;
+  min-width: 265px;
+  flex: 1 1 calc(25% - 60px);
+  margin: 20px 10px 0 10px;
+  position: relative;
+}
+.health__cell img {
+  width: 100%;
+}
+.health__head {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  background: #82D2EF;
+  padding: 13px;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  font-size: 18px;
+  color: #1f1f1f;
+}
+.health__decorative {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */

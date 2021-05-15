@@ -142,6 +142,15 @@ nav{
       font: 400 18px "Lexend-Regular";
       padding: 13px 52px;
       cursor: pointer;
+      transition: .3s;
+
+      &:hover, &:focus{
+        background: #E5A02F;
+        transition: .3s;
+      }
+      &:active{
+        background: #D6962D;
+      }
     }
   }
 
@@ -161,10 +170,14 @@ nav{
   }
 }
 
+.wrapper-health{
+  position: relative;
+  z-index: 0;
+}
+
 .health{
   margin: 0 auto;
   width: 1120px;
-  height: 1200px;
 
   & h2{
     font: 400 32px "Lexend-Regular";
@@ -176,19 +189,41 @@ nav{
   }
   & p{
     color: #1f1f1f;
-    margin: 0 20%;
     font:400 18px "IBM Plex Sans";
     line-height: 32px;
-    margin-bottom: 50px;
+    margin: 0 20% 30px;
   }
   &__grid{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 0 -10px;
+    padding-bottom: 80px;
   }
   &__cell{
-    width: 265px;
-    height: 265px;
-    background-size: contain;
+    min-width: 265px;
+    flex: 1 1 calc(25% - 60px);
+    margin: 20px 10px 0 10px;
+    position: relative;
+
+    & img{
+      width: 100%;
+    }
+  }
+  &__head{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    background: #82D2EF;
+    padding: 13px;
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    color: #1f1f1f;
+  }
+  &__decorative{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
   }
 }
