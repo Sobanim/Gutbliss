@@ -58,15 +58,53 @@ nav{
   align-items: center;
   height: 60px;
   width: 1120px;
+  position: relative;
 
-  & ul{
+  & ul.menu{
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 35%;
+    width: 40%;
+    & li{
+    }
     & li a{
       text-decoration: none;
       color: #135E79;
+      padding: 20px 10px;
+      transition: .3s;
+
+      &:hover{
+        transition: .3s;
+        background: #A1DDF3;
+      }
+    }
+  }
+  & ul.sub-menu{
+    //display: none;
+    position: absolute;
+    top: 60px;
+    left: 24%;
+    list-style: none;
+    background: #135E79;
+
+    & li a{
+      color: white;
+      text-decoration: none;
+      font: 400 16px 'Lexend-Regular';
+      padding: 20px 95px;
+      display: inline-block;
+      border-bottom: 1px solid #4B98B4;
+
+      &:hover, &focus{
+        background: #135E79;
+        color: #82D2EF;
+      }
+      &:active, &focus{
+        color: #F8A826;
+      }
+      &:last-child{
+        border-bottom: none;
+      }
     }
   }
 }

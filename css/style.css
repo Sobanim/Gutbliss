@@ -47,16 +47,48 @@ nav {
   align-items: center;
   height: 60px;
   width: 1120px;
+  position: relative;
 }
-nav ul {
+nav ul.menu {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  width: 35%;
+  width: 40%;
 }
-nav ul li a {
+nav ul.menu li a {
   text-decoration: none;
   color: #135E79;
+  padding: 20px 10px;
+  transition: 0.3s;
+}
+nav ul.menu li a:hover {
+  transition: 0.3s;
+  background: #A1DDF3;
+}
+nav ul.sub-menu {
+  position: absolute;
+  top: 60px;
+  left: 24%;
+  list-style: none;
+  background: #135E79;
+}
+nav ul.sub-menu li a {
+  color: white;
+  text-decoration: none;
+  font: 400 16px "Lexend-Regular";
+  padding: 20px 95px;
+  display: inline-block;
+  border-bottom: 1px solid #4B98B4;
+}
+nav ul.sub-menu li a:hover, nav ul.sub-menu li afocus {
+  background: #135E79;
+  color: #82D2EF;
+}
+nav ul.sub-menu li a:active, nav ul.sub-menu li afocus {
+  color: #F8A826;
+}
+nav ul.sub-menu li a:last-child {
+  border-bottom: none;
 }
 
 .general {
