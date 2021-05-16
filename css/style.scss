@@ -1,4 +1,5 @@
 @import "fonts.css";
+@import "variables";
 
 html{
   //overflow-y: hidden;
@@ -7,13 +8,7 @@ html{
 *{
   margin: 0;
   padding: 0;
-}
-
-@mixin lexend{
-  font-family: 'Lexend', sans-serif;
-}
-@mixin ibm-plex{
-  font-family: 'IBM Plex Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 // bg-colors
@@ -65,45 +60,73 @@ nav{
     justify-content: space-between;
     list-style: none;
     width: 40%;
+
     & li{
+
+      & ul.sub-menu{
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+        position: absolute;
+        top: 60px;
+        left: 24%;
+        list-style: none;
+        background: #135E79;
+
+        & li:not(:last-child){
+          border-bottom: 1px solid #4B98B4;
+        }
+
+        & li a{
+          color: white;
+          text-decoration: none;
+          font-family: 'Lexend-Regular', sans-serif;
+          font-size: $fz-nav;
+          padding: 20px 95px;
+          display: inline-block;
+          transition: .3s;
+
+          &:hover, &:focus{
+            background: #135E79;
+            color: #82D2EF;
+            transition: .3s;
+          }
+          &:active, &focus{
+            color: #F8A826;
+          }
+        }
+      }
+    }
+
+    & li:first-child:hover .sub-menu{
+      visibility: visible;
+      opacity: 1;
+      transition: .3s;
+
     }
     & li a{
       text-decoration: none;
       color: #135E79;
+      font-family: 'Lexend-Regular', sans-serif;
+      font-size: $fz-nav;
       padding: 20px 10px;
-      transition: .3s;
+      transition: .5s;
 
       &:hover{
-        transition: .3s;
+        transition: .5s;
         background: #A1DDF3;
       }
     }
   }
-  & ul.sub-menu{
-    //display: none;
-    position: absolute;
-    top: 60px;
-    left: 24%;
-    list-style: none;
-    background: #135E79;
 
-    & li a{
-      color: white;
-      text-decoration: none;
-      font: 400 16px 'Lexend-Regular';
-      padding: 20px 95px;
-      display: inline-block;
-      border-bottom: 1px solid #4B98B4;
+  & .social-media a{
+    display: inline-block;
 
-      &:hover, &focus{
-        background: #135E79;
-        color: #82D2EF;
-      }
-      &:active, &focus{
-        color: #F8A826;
-      }
-      &:last-child{
-        border-bottom: none;
+    & img {
+      transition: .3s;
+      &:hover{
+        transform: scale(1.3);
+        transition: .3s;
       }
     }
   }
@@ -123,19 +146,22 @@ nav{
     left: 21vw;
     bottom: 4vh;
 
-    width: 550px;
-    height: 390px;
+    width: 28.6vw;
+    //height: 390px;
     padding: 20px 30px;
     & h1{
-      font: 400 100px 'Lexend-Medium';
+      font-family: "Lexend-Regular", sans-serif;
+      font-size: $fz-gn-h1;
       color: #1f1f1f;
       line-height: 1.1;
       margin-bottom: 15px;
     }
     & p{
-      font: 400 20px 'Lexend-Regular';
+      font-family: 'Lexend-Regular';
+      font-size: $fz-gn-p;
       color: #135E79;
       line-height: 1.8;
+      margin-bottom: 40px;
     }
   }
 }
@@ -157,13 +183,15 @@ nav{
   padding-top: 80px;
   &__content{
     & h2{
-      font: 400 32px "Lexend-Regular";
+      font-family: 'Lexend-Regular', sans-serif;
+      font-size: $fz-h2;
       color: #135E79;
       line-height: 40px;
       margin-bottom: 17px;
     }
     & p{
-      font: 400 18px "IBM Plex Sans";
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: $fz-p;
       color: #1f1f1f;
       line-height: 32px;
       padding-right: 115px;
@@ -218,7 +246,8 @@ nav{
   width: 1120px;
 
   & h2{
-    font: 400 32px "Lexend-Regular";
+    font-family: 'Lexend-Regular', sans-serif;
+    font-size: $fz-h2;
     line-height: 40px;
     color: #135E79;
     padding-top: 80px;
@@ -227,7 +256,8 @@ nav{
   }
   & p{
     color: #1f1f1f;
-    font:400 18px "IBM Plex Sans";
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: $fz-p;
     line-height: 32px;
     margin: 0 20% 30px;
   }
@@ -242,6 +272,20 @@ nav{
     flex: 1 1 calc(25% - 60px);
     margin: 20px 10px 0 10px;
     position: relative;
+    transition: all .2s ease 0s;
+
+
+    &:hover{
+      transform: scale(1.15);
+      transition: all .2s ease 0s;
+      cursor: pointer;
+
+      & .health__head{
+        background: #135E79;
+        transition: all .2s ease 0s;
+        color: white;
+      }
+    }
 
     & img{
       width: 100%;
@@ -254,14 +298,97 @@ nav{
     background: #82D2EF;
     padding: 13px;
     box-sizing: border-box;
-    font-family: "Lexend", sans-serif;
-    font-size: 18px;
+    font-family: "Lexend-Regular", sans-serif;
     color: #1f1f1f;
+    transition: all .2s ease 0s;
+
+    & h3{
+      font-size: $fz-p;
+    }
   }
   &__decorative{
     position: absolute;
     bottom: 0px;
     left: 0px;
     z-index: -1;
+  }
+}
+
+// For adaptive
+@media (min-width: 2000px) {
+  nav{
+    & ul.menu li a{
+      padding: 17px 10px;
+      font-size: $fz-nav + 4px;
+    }
+    & ul.menu li ul.sub-menu li a{
+      font-size: $fz-nav + 4px;
+    }
+
+    & .social-media a img{
+      width: 24px;
+    }
+  }
+
+  .general__content{
+    left: 28vw;
+
+    & p{
+      font-size: $fz-gn-p +4px;
+    }
+  }
+
+  .mission__content p, .health p{
+    font-size: $fz-p +4px;
+  }
+  .health__head h3{
+    font-size: $fz-p + 4px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .mission__decorative{
+    width: 46.4vw;
+  }
+
+  .general__content {
+    min-width: 435px;
+
+    & h1 {
+      font-size: $fz-gn-h1 * 0.6;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  nav ul.menu li ul.sub-menu{
+    left: 27.5%
+  }
+  nav ul.menu li ul.sub-menu li a{
+    padding: 10px 60px;
+  }
+}
+
+@media (max-width: 1119px){
+  nav{
+    width: 900px;
+  }
+  .media-logos{
+    width: 900px;
+    & img{
+      width: 15vw;
+      max-height: 4.5vw;
+    }
+  }
+  .mission{
+    width: 900px;
+
+    &__image img{
+      height: 35vw;
+      width: 35vw;
+    }
+  }
+  .health{
+    width: 900px;
   }
 }
