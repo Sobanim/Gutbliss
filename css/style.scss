@@ -44,7 +44,7 @@ html{
   margin: 0 auto;
 }
 
-nav{
+header{
   margin: 0 auto;
   display: flex;
   font-family: 'Lexend-Regular', sans-serif;
@@ -132,6 +132,12 @@ nav{
   }
 }
 
+nav{
+  width: 68%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .general{
   height: 74vh;
   width: 100%;
@@ -163,6 +169,10 @@ nav{
       line-height: 1.8;
       margin-bottom: 40px;
     }
+  }
+
+  &__content-mob{
+    display: none;
   }
 }
 .media-logos{
@@ -313,10 +323,14 @@ nav{
     z-index: -1;
   }
 }
+// Burger
+.burger{
+  display: none;
+}
 
 // For adaptive
 @media (min-width: 2000px) {
-  nav{
+  header{
     & ul.menu li a{
       padding: 17px 10px;
       font-size: $fz-nav + 4px;
@@ -370,7 +384,7 @@ nav{
 }
 
 @media (max-width: 1119px){
-  nav{
+  header{
     width: 900px;
   }
   .media-logos{
@@ -390,5 +404,185 @@ nav{
   }
   .health{
     width: 900px;
+  }
+}
+@media (max-width: 900px) {
+  .general{
+    background-image: url("../images/general-bg-mob.jpg");
+    height: 45vh;
+
+    &__content{
+      display: none;
+    }
+    &__content-mob{
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: #82D2EF;
+      & h1{
+        padding-top: 10px;
+        font-size: $fz-gn-h1 - 40px;
+        font-family: 'Lexend-Regular', sans-serif;
+
+      }
+      & p{
+        margin-bottom: 68px;
+        font-size: $fz-gn-p;
+        font-family: 'Lexend-Regular', sans-serif;
+        color: #135E79;
+      }
+    }
+  }
+  header{
+    width: 100%;
+  }
+  nav{
+    display: none;
+  }
+  .media-logos{
+    padding: 0 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    & img{
+      height: 6.5vw;
+      width: auto;
+      max-height: fit-content;
+    }
+  }
+  .mission{
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-items: flex-start;
+    align-items: center;
+    padding-top: 40px;
+
+    &__content{
+      padding: 0 10px;
+      & h2{
+        font-size: $fz-h2 - 12px;
+        line-height: 28px;
+      }
+      & p{
+        font-size: $fz-gn-p - 4px;
+        padding-right: 0;
+      }
+      & button{
+        padding: 15px 45px ;
+        font-size: 16px;
+        margin-bottom: 70px;
+      }
+    }
+
+    &__image img{
+      width: 95vw;
+      height: 95vw;
+      margin-bottom: 40px;
+    }
+
+    &__decorative{
+      top: -25%;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+  }
+  .health{
+    width: 100%;
+    padding: 0 10px;
+
+    & h2{
+      padding-top: 20px;
+      font-size: 24px;
+    }
+    & p{
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    &__cell{
+      flex: 1 1 calc(50% - 60px);
+      min-width: auto;
+    }
+
+    &__decorative{
+      width: 50%;
+    }
+  }
+  .wrapper-nav{
+    padding: 0 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //nav{
+  //  position: fixed;
+  //  top: 0;
+  //  left: 0;
+  //  //width: 100%;
+  //  //height: 100%;
+  //  background: black;
+  //  flex-direction: column;
+  //  justify-content: flex-start;
+  //  transition: left 0.3s ease 0s;
+  //}
+
+
+  //Burder button
+  .burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+
+    &:before, &:after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      right: 0;
+      transition: all 0.5s ease 0s;
+    }
+
+    span {
+      position: absolute;
+      background-color: white;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      top: 9px;
+      transition: all 0.5s ease 0s;
+    }
+    &:after {
+      bottom: 0;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &.active:before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    &.active:after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+
+    &.active span {
+      transform: scale(0);
+    }
   }
 }
